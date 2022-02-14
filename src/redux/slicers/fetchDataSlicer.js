@@ -35,7 +35,7 @@ const { pending, isSuccess, isRejected } = fetchDataSlicer.actions;
 export const fetchDataAction = async () => {
     dispatch(pending());
     try {
-        const res = await axios.get(`https://jsonplaceholder.typicode.com/photos?_start=0&_limit=2000`);
+        const res = await axios.get(`https://jsonplaceholder.typicode.com/photos?_start=0&_limit=100`);
         dispatch(isSuccess(res.data))
     } catch (error) {
         dispatch(isRejected(error.message))
